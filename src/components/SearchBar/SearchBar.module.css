@@ -1,0 +1,27 @@
+.container {
+  margin-bottom: 24px;
+}
+
+.form {
+  background-color: white;
+  border: 1px solid gray;
+  width: 290px;
+  display: flex;
+  padding: 0;
+}
+
+.btn {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 0;
+  background-color: rgb(209, 199, 199);
+  text-align: center;
+  padding: 6px;
+  border: none;
+  line-height: 0;
+}
+
+.input {
+  background-color: white;
+  border: none;
+}
