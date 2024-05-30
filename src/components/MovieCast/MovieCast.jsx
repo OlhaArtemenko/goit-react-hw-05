@@ -1,9 +1,9 @@
-import css from "./MovieCast.module.css";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { fetchMovieCastById } from "../../movies-api";
-import Loader from "../Loader/Loader";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import css from './MovieCast.module.css';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { fetchMovieCastById } from '../../movies-api';
+import Loader from '../Loader/Loader';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 export default function MovieCast() {
   const [actors, setActors] = useState([]);
@@ -12,7 +12,7 @@ export default function MovieCast() {
 
   const { id } = useParams();
   const defaultImg =
-    "https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg";
+    'https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg';
 
   useEffect(() => {
     if (!id) return;
@@ -22,10 +22,10 @@ export default function MovieCast() {
       try {
         const data = await fetchMovieCastById(id);
         if (data.cast.length === 0) {
-          throw new Error("Sorry, no actor available!");
+          throw new Error('Sorry, no actor available!');
         }
         const actorsByMovie = data.cast.filter(
-          (actor) => actor.known_for_department === "Acting"
+          actor => actor.known_for_department === 'Acting'
         );
         setActors(actorsByMovie);
       } catch (error) {
@@ -57,7 +57,7 @@ export default function MovieCast() {
                 height="285px"
               />
               <div>
-                <p className={css.actorName}>{name}</p>
+                <p className={css.name}>{name}</p>
               </div>
             </li>
           ))}

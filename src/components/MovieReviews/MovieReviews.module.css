@@ -1,12 +1,12 @@
-.reviews_list {
-  padding: 24px 24px 24px 40px;
+.list {
+  padding: 20px;
 }
 
-.reviews_list_item {
-  padding-bottom: 24px;
+.item {
+  padding-bottom: 20px;
 }
 
 .author {
-  font-size: 20px;
-  margin-bottom: 12px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }

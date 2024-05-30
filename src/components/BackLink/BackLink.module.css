@@ -1,15 +1,15 @@
 .link {
+  padding-left: 20px;
+  padding-top: 20px;
   display: inline-flex;
+  gap: 5px;
   align-items: center;
-  padding-left: 24px;
-  padding-top: 24px;
-  gap: 4px;
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
   text-transform: uppercase;
+  color: rgb(15, 15, 37);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .link:hover {
-  color: blueviolet;
+  color: cornflowerblue;
 }

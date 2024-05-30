@@ -1,32 +1,24 @@
-.info_wrapper {
-  padding: 24px;
+.wrapper {
+  padding: 20px;
   border-bottom: 2px solid rgb(196, 194, 194);
   display: flex;
-  gap: 24px;
+  flex-direction: row;
+  gap: 20px;
 }
 
-.info_list {
-  padding: 0;
-  list-style: none;
+.item {
+  margin-bottom: 30px;
 }
 
-.info_list_item {
-  margin-bottom: 36px;
-}
-
-.movie_name {
+.name {
   font-size: 28px;
   margin-bottom: 12px;
 }
 
 .title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.links_list {
-  list-style: none;
+  margin-bottom: 5px;
 }
 
 .add {
@@ -40,15 +32,17 @@
 }
 
 .links_list {
-  padding: 24px;
+  padding: 20px;
   border-bottom: 2px solid rgb(196, 194, 194);
 }
 
 .link {
-  color: blue;
+  color: rgb(15, 15, 37);
   text-decoration: underline;
 }
-
+.link:hover {
+  color: cornflowerblue;
+}
 .active {
-  color: yellow;
+  color: cornflowerblue;
 }

@@ -2,7 +2,11 @@
   padding-left: 14px;
 }
 
-.list_item {
-  color: blue;
+.item {
+  color: rgb(15, 15, 37);
   text-decoration: underline;
+  font-size: 18px;
+}
+.item:hover {
+  color: cornflowerblue;
 }

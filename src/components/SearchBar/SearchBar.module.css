@@ -1,27 +1,31 @@
 .container {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .form {
-  background-color: white;
-  border: 1px solid gray;
-  width: 290px;
+  background-color: transparent;
+  border: 1px solid rgb(46, 112, 234);
+  width: 350px;
+  height: 35px;
   display: flex;
-  padding: 0;
+  justify-content: space-between;
+  padding: 3px;
 }
 
 .btn {
-  background-color: white;
-  border: 1px solid gray;
-  border-radius: 0;
-  background-color: rgb(209, 199, 199);
+  background-color: transparent;
+  border: 1px solid rgb(46, 112, 234);
+  background-color: transparent;
   text-align: center;
+  display: flex;
+  align-items: center;
   padding: 6px;
   border: none;
-  line-height: 0;
 }
 
 .input {
-  background-color: white;
+  width: 100%;
+  background-color: transparent;
   border: none;
+  outline: transparent;
 }

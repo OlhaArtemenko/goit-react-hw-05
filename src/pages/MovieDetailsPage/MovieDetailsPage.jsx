@@ -1,11 +1,11 @@
-import { NavLink, useParams, Outlet, useLocation } from "react-router-dom";
-import { fetchMovieById } from "../../movies-api";
-import { Suspense, useEffect, useState, useRef } from "react";
-import Loader from "../../components/Loader/Loader";
-import NotFoundPage from "../NotFoundPage/NotFoundPage";
-import BackLink from "../../components/BackLink/BackLink";
-import clsx from "clsx";
-import css from "./MovieDetailsPage.module.css";
+import { NavLink, useParams, Outlet, useLocation } from 'react-router-dom';
+import { fetchMovieById } from '../../movies-api';
+import { Suspense, useEffect, useState, useRef } from 'react';
+import Loader from '../../components/Loader/Loader';
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
+import BackLink from '../../components/BackLink/BackLink';
+import clsx from 'clsx';
+import css from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage() {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -16,7 +16,7 @@ export default function MovieDetailsPage() {
   const location = useLocation();
   const backLinkHref = useRef();
   const defaultImg =
-    "https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg";
+    'https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg';
   const buildLinkClass = ({ isActive }) => {
     return clsx(css.link, isActive && css.active);
   };
@@ -28,14 +28,14 @@ export default function MovieDetailsPage() {
       setLoading(true);
       try {
         const data = await fetchMovieById(id);
-        if (Object.keys.length === 0) {
-          setError("Sorry, page no find!");
+        if (Object.keys(data).length === 0) {
+          setError('Sorry, page no find!');
         }
         setMovieDetails(data);
         backLinkHref.current =
-          location.state?.pathname + location.state?.search ?? "/";
+          location.state?.pathname + location.state?.search ?? '/';
       } catch (error) {
-        setError("Sorry, page no find!");
+        setError('Sorry, page no find!');
       } finally {
         setLoading(false);
       }
@@ -50,7 +50,7 @@ export default function MovieDetailsPage() {
       {error && !loading && <NotFoundPage>{error}</NotFoundPage>}
       {movieDetails && !loading && (
         <section>
-          <div className={css.info_wrapper}>
+          <div className={css.wrapper}>
             <img
               src={
                 movieDetails.poster_path
@@ -60,25 +60,25 @@ export default function MovieDetailsPage() {
               alt={movieDetails.title}
               width={350}
             />
-            <ul className={css.info_list}>
-              <li className={css.info_list_item}>
-                <h2 className={css.movie_name}>
+            <ul className={css.list}>
+              <li className={css.item}>
+                <h2 className={css.name}>
                   {movieDetails.title} ({movieDetails.release_date.slice(0, 4)})
                 </h2>
               </li>
-              <li className={css.info_list_item}>
+              <li className={css.item}>
                 <p className={css.title}>
                   User score: {Math.round(movieDetails.vote_average * 10)}%
                 </p>
               </li>
-              <li className={css.info_list_item}>
+              <li className={css.item}>
                 <h3 className={css.title}>Overview</h3>
                 <p className={css.text}>{movieDetails.overview}</p>
               </li>
-              <li className={css.info_list_item}>
+              <li className={css.item}>
                 <h3 className={css.title}>Genres</h3>
                 <p className={css.text}>
-                  {movieDetails.genres.map((genre) => genre.name).join(", ")}
+                  {movieDetails.genres.map(genre => genre.name).join(', ')}
                 </p>
               </li>
             </ul>
@@ -97,7 +97,7 @@ export default function MovieDetailsPage() {
                 </NavLink>
               </li>
             </ul>
-            <Suspense fallback={<div>Loading subpage...</div>}>
+            <Suspense fallback={<div>Loading page...</div>}>
               <Outlet />
             </Suspense>
           </div>

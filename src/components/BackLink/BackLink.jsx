@@ -1,13 +1,12 @@
-import { HiArrowLeft } from "react-icons/hi";
-import { Link } from "react-router-dom";
-import css from "./BackLink.module.css";
+import { IoIosArrowBack } from 'react-icons/io';
+import { Link } from 'react-router-dom';
+import css from './BackLink.module.css';
 
-const BackLink = ({ to, children }) => {
+export default function BackLink({ to, children }) {
   return (
     <Link to={to} className={css.link}>
-      <HiArrowLeft size="24" />
+      <IoIosArrowBack size="20" />
       {children}
     </Link>
   );
-};
-export default BackLink;
+}
